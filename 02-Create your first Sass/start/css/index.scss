@@ -1,0 +1,80 @@
+
+$primary-color:red;
+.title{
+	color:$primary-color;
+}
+
+/*Generate Mixin for Border-radius*/
+
+@mixin border($radius:1,$key:1) {
+	@while $radius <=50 {
+		.b-r-#{$key} {
+			border-radius: $radius !important;
+		}
+		$radius: $radius + 5;
+		$key : $key + 5;
+	}
+}
+
+@include border(0px,0);
+
+/* Generate Mixin for Margin */
+
+@mixin margin($size: 1, $key:1) {
+     @while $size <= 30 {
+         .m-#{$key} {
+             margin: $size !important;
+         }
+
+         .m-t-#{$key} {
+             margin-top: $size !important;
+         }
+
+         .m-b-#{$key} {
+             margin-bottom: $size !important;
+         }
+
+         .m-l-#{$key} {
+             margin-left: $size !important;
+         }
+
+         .m-r-#{$key} {
+             margin-right: $size !important;
+         }
+
+         $size: $size + 5;
+         $key: $key + 5;
+     }
+ }
+
+@include margin(0px, 0);
+
+
+/*Generate Mixin for Padding*/
+
+@mixin padding($size: 1,$key:1) {
+	@while $size <=30 {
+		.p-#{$key} {
+			padding: $size !important;
+		}
+		.p-t-#{$key} {
+			padding-top: $size !important;
+		}
+		.p-b-#{$key} {
+			padding-bottom: $size !important;
+		}
+		.p-l-#{$key} {
+			padding-left: $size !important;
+		}
+		.p-r-#{$key} {
+			padding-right: $size !important;
+		}
+
+		$size: $size + 5;
+		$key: $key + 5;
+
+	}
+}
+
+@include padding(0px, 0);
+
